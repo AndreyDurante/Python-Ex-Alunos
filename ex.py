@@ -28,8 +28,9 @@ def situacao(media):
     else: situacao = "Reprovou"
     return situacao
 
-def listar_alunos(nomes):
-    return print(f"Lista de alunos:{nomes}")
+def listar_alunos(nomes, notas1, notas2):
+    for i in range(len(nomes)):
+        print(f"O aluno {nomes[i]} teve a média {calcular_media(notas1[i], notas2[i])}")
 
 def estatisticas_turma(nomes, notas1, notas2):
     total_alunos = len(nomes)
@@ -59,7 +60,7 @@ while True:
     if opcao == "1":
         cadastrar_aluno(nomes, notas1, notas2)
     elif opcao == "2":
-        listar_alunos(nomes)
+        listar_alunos(nomes, notas1, notas2)
     elif opcao == "3":
         print(estatisticas_turma(nomes, notas1, notas2))
     elif opcao == "4":
